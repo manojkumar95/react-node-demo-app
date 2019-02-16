@@ -1,10 +1,9 @@
 const mongoose = require('mongoose'), Schema = mongoose.Schema;
 
 const UserSchema = Schema({
-    name: String,
+    name: { type:String, required: true },
     company: String,
-    employeeId: String,
-	expenses : [{ type: Schema.Types.ObjectId, ref: 'Expense' }]
+    employeeId: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
